@@ -32,15 +32,21 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private float jumpForce;
 
-    [SerializeField]
-    private GameObject bulletPrefab;
+    private GameObject weaponPrefab;
 
-	// Use this for initialization
-	void Start ()
+    [SerializeField]
+    private GameObject pistolPrefab;
+
+    [SerializeField]
+    private GameObject machineGunPrefab;
+
+    // Use this for initialization
+    void Start ()
     {
         facingRight = true;
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+        weaponPrefab = machineGunPrefab;
 	}
 
     void Update()
@@ -86,7 +92,11 @@ public class Player : MonoBehaviour {
         {
             jump = true;
         }
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1") && (weaponPrefab == machineGunPrefab))
+        {
+            ShootBullet(0);
+        }
+        else if (Input.GetButtonDown("Fire1"))
         {
             ShootBullet(0);
         }
@@ -136,55 +146,55 @@ public class Player : MonoBehaviour {
         //btns up + right
         if (Input.GetAxis("Vertical") > 0 && Input.GetAxis("Horizontal") > 0)
         {
-            GameObject tmp = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 45)));
+            GameObject tmp = Instantiate(weaponPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 45)));
             tmp.GetComponent<Bullet>().Initialize(Vector2.up + Vector2.right);
         }
 
         //btns up + left
         else if (Input.GetAxis("Vertical") > 0 && Input.GetAxis("Horizontal") < 0)
         {
-            GameObject tmp = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 135)));
+            GameObject tmp = Instantiate(weaponPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 135)));
             tmp.GetComponent<Bullet>().Initialize(Vector2.up + Vector2.left);
         }
 
         //btn up
         else if (Input.GetAxis("Vertical") > 0)
         {
-            GameObject tmp = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 90)));
+            GameObject tmp = Instantiate(weaponPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 90)));
             tmp.GetComponent<Bullet>().Initialize(Vector2.up);
         }
 
         //btns down + right + !grounded
         else if (Input.GetAxis("Vertical") < 0 && Input.GetAxis("Horizontal") > 0 && !isGrounded)
         {
-            GameObject tmp = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, -45)));
+            GameObject tmp = Instantiate(weaponPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, -45)));
             tmp.GetComponent<Bullet>().Initialize(Vector2.down + Vector2.right);
         }
 
         //btns down + left + !grounded
         else if (Input.GetAxis("Vertical") < 0 && Input.GetAxis("Horizontal") < 0 && !isGrounded)
         {
-            GameObject tmp = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, -135)));
+            GameObject tmp = Instantiate(weaponPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, -135)));
             tmp.GetComponent<Bullet>().Initialize(Vector2.down + Vector2.left);
         }
 
         //btn down + !grounded
         else if (Input.GetAxis("Vertical") < 0 && !isGrounded)
         {
-            GameObject tmp = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, -90)));
+            GameObject tmp = Instantiate(weaponPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, -90)));
             tmp.GetComponent<Bullet>().Initialize(Vector2.down);
         }
 
         else if (facingRight)
         {
-            GameObject tmp = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+            GameObject tmp = Instantiate(weaponPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
             tmp.GetComponent<Bullet>().Initialize(Vector2.right);
         }
 
         //facing left
         else
         {
-            GameObject tmp = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 180)));
+            GameObject tmp = Instantiate(weaponPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 180)));
             tmp.GetComponent<Bullet>().Initialize(Vector2.left);
         }
     }

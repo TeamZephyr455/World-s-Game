@@ -1006,7 +1006,9 @@ MonoBehaviour:
     m_Bits: 4294967295
   airControl: 1
   jumpForce: 400
-  bulletPrefab: {fileID: 1880469813644996, guid: d16e9b5fc60b8254ea9f6fb8987e9e7e,
+  pistolPrefab: {fileID: 1880469813644996, guid: d16e9b5fc60b8254ea9f6fb8987e9e7e,
+    type: 2}
+  machineGunPrefab: {fileID: 1599045776566284, guid: c64ccf40da1c8294f8dc8441c57b1744,
     type: 2}
 --- !u!1 &972451363
 GameObject:
