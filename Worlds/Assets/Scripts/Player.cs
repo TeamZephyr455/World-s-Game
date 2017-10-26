@@ -35,10 +35,7 @@ public class Player : MonoBehaviour {
     private GameObject weaponPrefab;
 
     [SerializeField]
-    private GameObject pistolPrefab;
-
-    [SerializeField]
-    private GameObject machineGunPrefab;
+    private GameObject defaultWeapon;
 
     private float fireRate;
     private float Damage;
@@ -51,7 +48,7 @@ public class Player : MonoBehaviour {
         facingRight = true;
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
-        swapWeapon(machineGunPrefab);
+        swapWeapon(defaultWeapon); //starting weapon
 
     }
 
@@ -218,7 +215,7 @@ public class Player : MonoBehaviour {
             ammoCount -= 1;
             if (ammoCount == 0)
             {
-                swapWeapon(pistolPrefab);
+                swapWeapon(defaultWeapon);
             }
         }
 
