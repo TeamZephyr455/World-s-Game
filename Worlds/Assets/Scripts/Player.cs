@@ -32,6 +32,12 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private float jumpForce;
 
+    private bool rapidFire;
+
+    private int fireRate; //bulletsPerSecond
+
+    private int ammoCount; //primary weapon ammo count
+
     private GameObject weaponPrefab;
 
     [SerializeField]
@@ -47,7 +53,10 @@ public class Player : MonoBehaviour {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         weaponPrefab = machineGunPrefab;
-	}
+        ammoCount = weaponPrefab.GetComponent<Bullet>().ammoCount;
+        fireRate = weaponPrefab.GetComponent<Bullet>().fireRate;
+        InvokeRepeating("ShootRapidly", 0.0f, 1.0f / fireRate);
+    }
 
     void Update()
     {
@@ -92,14 +101,21 @@ public class Player : MonoBehaviour {
         {
             jump = true;
         }
-        if (Input.GetButton("Fire1") && (weaponPrefab == machineGunPrefab))
+
+        rapidFire = false;
+        if (Input.GetButtonDown("Fire1") && (fireRate > 0))
         {
-            ShootBullet(0);
+            ShootBullet();
         }
-        else if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
-            ShootBullet(0);
+            rapidFire = true;
         }
+        else if (Input.GetButtonUp("Fire1"))
+        {
+            CancelInvoke("ShootBullet");
+        }
+
     }
 
     private void Flip(float horizontal)
@@ -141,7 +157,7 @@ public class Player : MonoBehaviour {
         return false;
     }
 
-    public void ShootBullet(int value)
+    public void ShootBullet()
     {
         //btns up + right
         if (Input.GetAxis("Vertical") > 0 && Input.GetAxis("Horizontal") > 0)
@@ -197,5 +213,25 @@ public class Player : MonoBehaviour {
             GameObject tmp = Instantiate(weaponPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 180)));
             tmp.GetComponent<Bullet>().Initialize(Vector2.left);
         }
+
+        if (ammoCount > 0)
+        {
+            ammoCount -= 1;
+        }
+        if (ammoCount == 0)
+        {
+            rapidFire = false;
+            weaponPrefab = pistolPrefab;
+            ammoCount = pistolPrefab.GetComponent<Bullet>().ammoCount;
+            fireRate = pistolPrefab.GetComponent<Bullet>().fireRate;
+        }
+    }
+
+    public void ShootRapidly()
+    {
+        if (rapidFire == false)
+            return;
+        else
+            ShootBullet();
     }
 }

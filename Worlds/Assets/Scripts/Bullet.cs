@@ -12,6 +12,12 @@ public class Bullet : MonoBehaviour {
 
     private Vector2 direction;
 
+    [SerializeField]
+    public int fireRate;
+
+    [SerializeField]
+    public int ammoCount;
+
 	// Use this for initialization
 	void Start () {
 

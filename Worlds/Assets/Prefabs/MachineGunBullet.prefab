@@ -74,6 +74,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  fireRate: 500
+  ammoCount: 250
 --- !u!212 &212784475903230716
 SpriteRenderer:
   m_ObjectHideFlags: 1
