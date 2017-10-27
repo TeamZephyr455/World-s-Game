@@ -37,10 +37,14 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private GameObject defaultWeapon;
 
+    [SerializeField]
+    private GameObject bombPrefab;
+
     private float fireRate;
     private float Damage;
     private float timeToFire;
     private int ammoCount;
+    private int bombCount;
 
     // Use this for initialization
     void Start ()
@@ -49,6 +53,7 @@ public class Player : MonoBehaviour {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         swapWeapon(defaultWeapon); //starting weapon
+        bombCount = bombPrefab.GetComponent<Bomb>().ammo;
 
     }
 
@@ -110,6 +115,11 @@ public class Player : MonoBehaviour {
                 timeToFire = Time.time + 1/fireRate;
                 ShootBullet();
             }
+        }
+
+        if (Input.GetButtonDown("Fire2") && bombCount > 0)
+        {
+            throwBomb();
         }
 
     }
@@ -219,6 +229,24 @@ public class Player : MonoBehaviour {
             }
         }
 
+    }
+
+    public void throwBomb()
+    {
+         if (facingRight)
+        {
+            GameObject tmp = Instantiate(bombPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 45)));
+            tmp.GetComponent<Bomb>().Initialize(Vector2.right);
+        }
+
+        //facing left
+        else
+        {
+            GameObject tmp = Instantiate(bombPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 45)));
+            tmp.GetComponent<Bomb>().Initialize(Vector2.left);
+        }
+
+        bombCount -= 1;
     }
 
     public void swapWeapon(GameObject weapon)

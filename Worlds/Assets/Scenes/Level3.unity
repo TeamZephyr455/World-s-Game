@@ -1062,6 +1062,7 @@ MonoBehaviour:
   jumpForce: 400
   defaultWeapon: {fileID: 1880469813644996, guid: d16e9b5fc60b8254ea9f6fb8987e9e7e,
     type: 2}
+  bombPrefab: {fileID: 1071482029776686, guid: b159118b94015cc44a61eee61ef7e897, type: 2}
 --- !u!1 &972451363
 GameObject:
   m_ObjectHideFlags: 0
