@@ -78,6 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e65e63c6333576b4cb0d75fd5b990958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBombAmmo: 0
+  bombsToAdd: 0
+  isWeaponPickup: 1
   weapon: {fileID: 1599045776566284, guid: c64ccf40da1c8294f8dc8441c57b1744, type: 2}
 --- !u!212 &212118901547033940
 SpriteRenderer:

@@ -5,6 +5,11 @@ using UnityEngine;
 public class Powerup : MonoBehaviour {
 
     [SerializeField]
+    private bool isBombAmmo;
+    [SerializeField]
+    private int bombsToAdd;
+
+    [SerializeField]
     private bool isWeaponPickup;
     [SerializeField]
     private GameObject weapon;
@@ -28,6 +33,11 @@ public class Powerup : MonoBehaviour {
             if (isWeaponPickup)
             {
                 thePlayer.swapWeapon(weapon);
+            }
+
+            if(isBombAmmo)
+            {
+                thePlayer.bombCount += bombsToAdd;
             }
             
             gameObject.SetActive(false);
