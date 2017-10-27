@@ -12,8 +12,19 @@ public class Bullet : MonoBehaviour {
 
     private Vector2 direction;
 
-	// Use this for initialization
-	void Start () {
+    [SerializeField]
+    public float fireRate;
+    [SerializeField]
+    public float damage;
+    [SerializeField]
+    public float timeToFire;
+    [SerializeField]
+    public int ammo;
+
+    //public LayerMask notToHit;
+
+    // Use this for initialization
+    void Start () {
 
         myRigidbody = GetComponent<Rigidbody2D>();
 
