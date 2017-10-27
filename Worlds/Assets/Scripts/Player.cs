@@ -44,7 +44,7 @@ public class Player : MonoBehaviour {
     private float Damage;
     private float timeToFire;
     private int ammoCount;
-    private int bombCount;
+    public int bombCount;
 
     // Use this for initialization
     void Start ()
@@ -251,6 +251,11 @@ public class Player : MonoBehaviour {
 
     public void swapWeapon(GameObject weapon)
     {
+        if (weapon.GetComponent<Bullet>().fireRate == fireRate && fireRate != 0)
+        {
+            ammoCount += weapon.GetComponent<Bullet>().ammo;
+            return;
+        }
         weaponPrefab = weapon;
         fireRate = weaponPrefab.GetComponent<Bullet>().fireRate;
         Damage = weaponPrefab.GetComponent<Bullet>().damage;
