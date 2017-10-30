@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour {
     [SerializeField]
     public float fireRate;
     [SerializeField]
-    public float damage;
+    public int damage;
     [SerializeField]
     public float timeToFire;
     [SerializeField]
@@ -43,5 +43,14 @@ public class Bullet : MonoBehaviour {
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag != "Player")
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 }

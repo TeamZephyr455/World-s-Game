@@ -26,9 +26,15 @@ public class Powerup : MonoBehaviour {
 		
 	}
 
-    void OnTriggerEnter2D(Collider2D other)
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if(other.name == "Player")
+        if (collision.tag == "Enemy")
+        {
+            Physics2D.IgnoreCollision(collision, GetComponent<Collider2D>());
+        }
+
+        if (collision.name == "Player")
         {
             if (isWeaponPickup)
             {

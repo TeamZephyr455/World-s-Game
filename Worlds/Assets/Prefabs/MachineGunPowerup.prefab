@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61465529169120536}
   - component: {fileID: 61810307346131064}
   - component: {fileID: 50084235628071268}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MachineGunPowerup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
