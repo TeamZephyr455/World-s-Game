@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -16,9 +18,9 @@ TagManager:
   - Player
   - Enemy
   - Invulnerable
-  - 
-  - 
-  - 
+  - Bullets
+  - Powerups
+  - Bombs
   - 
   - 
   - 
@@ -38,11 +40,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 4022113289
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: ground
     uniqueID: 2250115549
