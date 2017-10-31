@@ -13,15 +13,15 @@ public class Slime : MonoBehaviour {
     private bool facingRight;
 
     [SerializeField]
-    public int StartingHealth;
+    private int damage;
 
-    public int health;
+    [SerializeField]
+    private int bumpForce;
 
     // Use this for initialization
     void Start ()
     {
         enemyRigidBody = GetComponent<Rigidbody2D>();
-        health = StartingHealth;
 	}
 	
 	// Update is called once per frame
@@ -38,12 +38,14 @@ public class Slime : MonoBehaviour {
             Flip();
         }
 
-        if (collision.tag == "Bullet")
+        if (collision.tag == "Player")
         {
-            Bullet enemyBullet = collision.GetComponent<Bullet>();
-            if (enemyBullet != null)
+            Health playerHealth = collision.gameObject.GetComponent<Health>();
+            if (playerHealth != null)
             {
-                health -= enemyBullet.damage; 
+                playerHealth.TakeDamage(damage);
+                collision.GetComponent<Player>().KnockBack();
+                collision.GetComponent<Rigidbody2D>().AddForce(Vector2.left);
             }
         }
 
@@ -62,11 +64,4 @@ public class Slime : MonoBehaviour {
         speed *= -1;
     }
 
-    private void IsDead()
-    {
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
 }

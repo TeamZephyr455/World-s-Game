@@ -32,4 +32,9 @@ public class Health : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+    public void ResetHealth()
+    {
+        currentHealth = startingHealth;
+    }
 }

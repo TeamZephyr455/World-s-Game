@@ -8,6 +8,8 @@ public class Player : MonoBehaviour {
 
     private Animator myAnimator;
 
+    private Health myHealth;
+
     [SerializeField]
     private float movementSpeed;
 
@@ -52,6 +54,7 @@ public class Player : MonoBehaviour {
         facingRight = true;
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+        myHealth = GetComponent<Health>();
         swapWeapon(defaultWeapon); //starting weapon
         bombCount = bombPrefab.GetComponent<Bomb>().ammo;
 
@@ -256,11 +259,24 @@ public class Player : MonoBehaviour {
             ammoCount += weapon.GetComponent<Bullet>().ammo;
             return;
         }
+
         weaponPrefab = weapon;
         fireRate = weaponPrefab.GetComponent<Bullet>().fireRate;
         Damage = weaponPrefab.GetComponent<Bullet>().damage;
         timeToFire = weaponPrefab.GetComponent<Bullet>().timeToFire;
         ammoCount = weaponPrefab.GetComponent<Bullet>().ammo;
-}
+    }
 
+    public void KnockBack()
+    {
+        myRigidbody.velocity = Vector2.zero;
+    }
+
+    public void Death()
+    {
+        myRigidbody.velocity = Vector2.zero;
+        myAnimator.SetTrigger("Idle");
+        myHealth.ResetHealth();
+        //transform.position = startPos;
+    }
 }
