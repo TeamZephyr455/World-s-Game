@@ -4,44 +4,38 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    //Player Components
     private Rigidbody2D myRigidbody;
-
     private Animator myAnimator;
-
     private Health myHealth;
 
+    //Movement Variables
     [SerializeField]
     private float movementSpeed;
-
     private bool facingRight;
 
+    //Jumping Variables
     [SerializeField]
     private Transform[] groundPoints;
-
     [SerializeField]
     private float groundRadius;
-
     [SerializeField]
     private LayerMask whatIsGround;
-
     private bool isGrounded;
-
     private bool jump;
-
     [SerializeField]
     private bool airControl;
-
     [SerializeField]
     private float jumpForce;
 
+    //Player Weapons
     private GameObject weaponPrefab;
-
     [SerializeField]
     private GameObject defaultWeapon;
-
     [SerializeField]
     private GameObject bombPrefab;
 
+    //Weapon Attributes
     private float fireRate;
     private float Damage;
     private float timeToFire;
@@ -91,8 +85,6 @@ public class Player : MonoBehaviour {
             isGrounded = false;
             myRigidbody.AddForce(new Vector2(0, jumpForce));
         }
-
-
 
         myAnimator.SetFloat("speed", Mathf.Abs(horizonatal));
     }
