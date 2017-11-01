@@ -4,42 +4,38 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    //Player Components
     private Rigidbody2D myRigidbody;
-
     private Animator myAnimator;
+    private Health myHealth;
 
+    //Movement Variables
     [SerializeField]
     private float movementSpeed;
-
     private bool facingRight;
 
+    //Jumping Variables
     [SerializeField]
     private Transform[] groundPoints;
-
     [SerializeField]
     private float groundRadius;
-
     [SerializeField]
     private LayerMask whatIsGround;
-
     private bool isGrounded;
-
     private bool jump;
-
     [SerializeField]
     private bool airControl;
-
     [SerializeField]
     private float jumpForce;
 
+    //Player Weapons
     private GameObject weaponPrefab;
-
     [SerializeField]
     private GameObject defaultWeapon;
-
     [SerializeField]
     private GameObject bombPrefab;
 
+    //Weapon Attributes
     private float fireRate;
     private float Damage;
     private float timeToFire;
@@ -52,6 +48,7 @@ public class Player : MonoBehaviour {
         facingRight = true;
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+        myHealth = GetComponent<Health>();
         swapWeapon(defaultWeapon); //starting weapon
         bombCount = bombPrefab.GetComponent<Bomb>().ammo;
 
@@ -88,8 +85,6 @@ public class Player : MonoBehaviour {
             isGrounded = false;
             myRigidbody.AddForce(new Vector2(0, jumpForce));
         }
-
-
 
         myAnimator.SetFloat("speed", Mathf.Abs(horizonatal));
     }
@@ -256,11 +251,24 @@ public class Player : MonoBehaviour {
             ammoCount += weapon.GetComponent<Bullet>().ammo;
             return;
         }
+
         weaponPrefab = weapon;
         fireRate = weaponPrefab.GetComponent<Bullet>().fireRate;
         Damage = weaponPrefab.GetComponent<Bullet>().damage;
         timeToFire = weaponPrefab.GetComponent<Bullet>().timeToFire;
         ammoCount = weaponPrefab.GetComponent<Bullet>().ammo;
-}
+    }
 
+    public void KnockBack()
+    {
+        myRigidbody.velocity = Vector2.zero;
+    }
+
+    public void Death()
+    {
+        myRigidbody.velocity = Vector2.zero;
+        myAnimator.SetTrigger("Idle");
+        myHealth.ResetHealth();
+        //transform.position = startPos;
+    }
 }
