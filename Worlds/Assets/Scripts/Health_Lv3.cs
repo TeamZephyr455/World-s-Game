@@ -6,6 +6,8 @@ public class Health_Lv3 : MonoBehaviour {
 
     [SerializeField]
     private int startingHealth;
+    [SerializeField]
+    private bool isPlayer;
 
     private int currentHealth;
 
@@ -29,7 +31,15 @@ public class Health_Lv3 : MonoBehaviour {
     {
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            if (isPlayer)
+            {
+                gameObject.GetComponent<Player_Lv3>().Death();
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+
         }
     }
 

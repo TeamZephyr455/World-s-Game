@@ -42,6 +42,9 @@ public class Player_Lv3 : MonoBehaviour {
     private int ammoCount;
     public int bombCount;
 
+    //Checkpoints
+    private Transform currentCheckpoint;
+
     // Use this for initialization
     void Start ()
     {
@@ -264,11 +267,16 @@ public class Player_Lv3 : MonoBehaviour {
         myRigidbody.velocity = Vector2.zero;
     }
 
+    public void NewCheckpoint(Transform checkpoint)
+    {
+        currentCheckpoint = checkpoint;
+    }
+
     public void Death()
     {
         myRigidbody.velocity = Vector2.zero;
         myAnimator.SetTrigger("Idle");
         myHealth.ResetHealth();
-        //transform.position = startPos;
+        transform.position = currentCheckpoint.position;
     }
 }
