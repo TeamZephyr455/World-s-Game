@@ -22,13 +22,14 @@ public class Slime_Lv3 : MonoBehaviour {
     void Start ()
     {
         enemyRigidBody = GetComponent<Rigidbody2D>();
+        if (facingRight)
+            Flip();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
         enemyRigidBody.velocity = new Vector2(-speed, enemyRigidBody.velocity.y);
-
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -64,4 +65,8 @@ public class Slime_Lv3 : MonoBehaviour {
         speed *= -1;
     }
 
+    public void Initialize(bool goRight)
+    {
+        facingRight = goRight;
+    }
 }

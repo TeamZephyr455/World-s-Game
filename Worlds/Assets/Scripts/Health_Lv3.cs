@@ -8,26 +8,42 @@ public class Health_Lv3 : MonoBehaviour {
     private int startingHealth;
     [SerializeField]
     private bool isPlayer;
+    [SerializeField]
+    private float invulnerabilityTime;
+
+    private bool invincible;
 
     private int currentHealth;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         currentHealth = startingHealth;
+        invincible = false;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        IsDead();
+        if (!invincible)
+        {
+            currentHealth -= damage;
+            if (!IsDead() && isPlayer)
+            {
+                invincible = true;
+                Invoke("resetInvulnerablility", invulnerabilityTime);
+
+            }
+        }
+
     }
 
-    private void IsDead()
+    private bool IsDead()
     {
         if (currentHealth <= 0)
         {
@@ -39,12 +55,19 @@ public class Health_Lv3 : MonoBehaviour {
             {
                 Destroy(gameObject);
             }
-
+            return true;
         }
+        else
+            return false;
     }
 
     public void ResetHealth()
     {
         currentHealth = startingHealth;
+    }
+
+    private void resetInvulnerablility()
+    {
+        invincible = false;
     }
 }

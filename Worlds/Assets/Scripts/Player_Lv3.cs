@@ -275,7 +275,6 @@ public class Player_Lv3 : MonoBehaviour {
     public void Death()
     {
         myRigidbody.velocity = Vector2.zero;
-        myAnimator.SetTrigger("Idle");
         myHealth.ResetHealth();
         transform.position = currentCheckpoint.position;
     }
