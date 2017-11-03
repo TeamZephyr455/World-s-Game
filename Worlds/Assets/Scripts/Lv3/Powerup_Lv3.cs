@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Powerup : MonoBehaviour {
+public class Powerup_Lv3 : MonoBehaviour {
 
     [SerializeField]
     private bool isBombAmmo;
@@ -14,11 +14,11 @@ public class Powerup : MonoBehaviour {
     [SerializeField]
     private GameObject weapon;
 
-    private Player thePlayer;
+    private Player_Lv3 thePlayer;
 
 	// Use this for initialization
 	void Start () {
-        thePlayer = FindObjectOfType<Player>();
+        thePlayer = FindObjectOfType<Player_Lv3>();
     }
 	
 	// Update is called once per frame
@@ -26,9 +26,15 @@ public class Powerup : MonoBehaviour {
 		
 	}
 
-    void OnTriggerEnter2D(Collider2D other)
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if(other.name == "Player")
+        if (collision.tag == "Enemy")
+        {
+            Physics2D.IgnoreCollision(collision, GetComponent<Collider2D>());
+        }
+
+        if (collision.name == "Player")
         {
             if (isWeaponPickup)
             {
@@ -43,5 +49,10 @@ public class Powerup : MonoBehaviour {
             gameObject.SetActive(false);
         }
 
+    }
+
+    public void Initialize()
+    {
+        return;
     }
 }

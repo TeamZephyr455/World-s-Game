@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Bomb : MonoBehaviour
+public class Bomb_Lv3 : MonoBehaviour
 {
 
     [SerializeField]
@@ -13,6 +13,10 @@ public class Bomb : MonoBehaviour
 
     [SerializeField]
     public int ammo;
+
+    [SerializeField]
+    private float fuseTime;
+    private float timeToBlow;
 
     [SerializeField]
     private LayerMask whatToColliideWith;
@@ -27,16 +31,34 @@ public class Bomb : MonoBehaviour
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
+        timeToBlow = fuseTime;
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        
+        if (timeToBlow <= 0)
+        {
+            Explode();
+        }
+        else timeToBlow -= Time.deltaTime;
     }
 
     public void Initialize(Vector2 direction)
     {
         GetComponent<Rigidbody2D>().AddForce(direction * horizontalPower);
         GetComponent<Rigidbody2D>().AddForce(Vector2.up * verticalPower);
+    }
+
+    private void Explode()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            Explode();
+        }
     }
 }
