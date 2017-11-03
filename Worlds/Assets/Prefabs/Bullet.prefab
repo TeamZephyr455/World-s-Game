@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   fireRate: 0
-  damage: 10
+  damage: 5
   timeToFire: 0
   ammo: 0
 --- !u!212 &212374586303736982

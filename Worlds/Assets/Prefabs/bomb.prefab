@@ -105,9 +105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a0d47d6e296eab48897b8ce00a82afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalPower: 150
-  verticalPower: 350
+  horizontalPower: 300
+  verticalPower: 250
   ammo: 5
+  fuseTime: 5
   whatToColliideWith:
     serializedVersion: 2
     m_Bits: 0
