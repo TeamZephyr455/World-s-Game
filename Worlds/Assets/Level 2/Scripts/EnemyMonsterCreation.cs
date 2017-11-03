@@ -44,7 +44,7 @@ public class EnemyMonsterCreation : MonoBehaviour {
 		transform.position = enemyPos4;
 
 		Vector3 playerPos = transform.position;
-		playerPos.x = -8;
+		playerPos.x = -13;
 		playerPos.y = 0;
 		playerPos.z = 0;
 		transform.position = playerPos;
@@ -56,13 +56,6 @@ public class EnemyMonsterCreation : MonoBehaviour {
 		Instantiate (enemyPrefab4, enemyPos4, transform.rotation);
 		Instantiate (monsterPrefab, monsterPos, transform.rotation);
 
-		// for (int i = 0; i <11; i++) {
-			
-		// 	if (i == 10) {
-		// 		Instantiate (monsterPrefab, pos, transform.rotation);
-		// 		Debug.Log(i);
-		// 	}
-		// }
 	}
 	
 	// Update is called once per frame

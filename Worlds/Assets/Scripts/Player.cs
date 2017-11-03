@@ -53,7 +53,7 @@ public class Player : MonoBehaviour {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         swapWeapon(defaultWeapon); //starting weapon
-        bombCount = bombPrefab.GetComponent<Bomb>().ammo;
+        bombCount = bombPrefab.GetComponent<Bomb_Lv3>().ammo;
 
     }
 
@@ -236,14 +236,14 @@ public class Player : MonoBehaviour {
          if (facingRight)
         {
             GameObject tmp = Instantiate(bombPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 45)));
-            tmp.GetComponent<Bomb>().Initialize(Vector2.right);
+            tmp.GetComponent<Bomb_Lv3>().Initialize(Vector2.right);
         }
 
         //facing left
         else
         {
             GameObject tmp = Instantiate(bombPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 45)));
-            tmp.GetComponent<Bomb>().Initialize(Vector2.left);
+            tmp.GetComponent<Bomb_Lv3>().Initialize(Vector2.left);
         }
 
         bombCount -= 1;
