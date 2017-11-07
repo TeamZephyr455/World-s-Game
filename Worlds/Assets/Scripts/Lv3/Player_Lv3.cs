@@ -37,10 +37,12 @@ public class Player_Lv3 : MonoBehaviour {
 
     //Weapon Attributes
     private float fireRate;
-    private float Damage;
     private float timeToFire;
     private int ammoCount;
     public int bombCount;
+
+    public int lifes;
+    private int currentLifes;
 
     //Checkpoints
     private Transform currentCheckpoint;
@@ -54,6 +56,7 @@ public class Player_Lv3 : MonoBehaviour {
         myHealth = GetComponent<Health_Lv3>();
         swapWeapon(defaultWeapon); //starting weapon
         bombCount = bombPrefab.GetComponent<Bomb_Lv3>().ammo;
+        currentLifes = lifes;
 
     }
 
@@ -257,7 +260,6 @@ public class Player_Lv3 : MonoBehaviour {
 
         weaponPrefab = weapon;
         fireRate = weaponPrefab.GetComponent<Bullet_Lv3>().fireRate;
-        Damage = weaponPrefab.GetComponent<Bullet_Lv3>().damage;
         timeToFire = weaponPrefab.GetComponent<Bullet_Lv3>().timeToFire;
         ammoCount = weaponPrefab.GetComponent<Bullet_Lv3>().ammo;
     }
@@ -274,8 +276,17 @@ public class Player_Lv3 : MonoBehaviour {
 
     public void Death()
     {
-        myRigidbody.velocity = Vector2.zero;
-        myHealth.ResetHealth();
-        transform.position = currentCheckpoint.position;
+        if (currentLifes > 0)
+        {
+            currentLifes -= 1;
+            GetComponent<HealthBar_Lv3>().UpdateLives(currentLifes);
+            myRigidbody.velocity = Vector2.zero;
+            myHealth.ResetHealth();
+            transform.position = currentCheckpoint.position;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
