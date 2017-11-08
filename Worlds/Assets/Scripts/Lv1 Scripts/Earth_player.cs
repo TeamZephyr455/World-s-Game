@@ -113,8 +113,8 @@ public class Earth_player : Character_Lv1
 
     public override void ShootFire(int value)
     {
-    
-         base.ShootFire(value);
-        
+
+        base.ShootFire(value);
+
     }
 }

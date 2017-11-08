@@ -1,9 +1,8 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public abstract class Character_Lv1 : MonoBehaviour
 {
-    protected Animator myAnimator;
+    public Animator myAnimator { get; private set; }
 
     [SerializeField]
     protected Transform FirePos;
@@ -19,21 +18,24 @@ public abstract class Character_Lv1 : MonoBehaviour
     protected GameObject FireBulletPrefab;
 
     // Use this for initialization
-    public virtual void Start ()
+    public virtual void Start()
     {
         faceright = true;
         myAnimator = GetComponent<Animator>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public void ChangeDirection()
     {
         faceright = !faceright;
-        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y * 1, transform.localScale.z *1);
+
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y * 1, transform.localScale.z * 1);
+
     }
 
     public virtual void ShootFire(int value)
