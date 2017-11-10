@@ -9,6 +9,9 @@ public class Earth_Enemy : Character_Lv1
 
     public GameObject Target { get; set; }
 
+    [SerializeField]
+    private float shootRange;
+
     // Use this for initialization
     public override void Start()
     {
@@ -33,8 +36,16 @@ public class Earth_Enemy : Character_Lv1
     // Update is called once per frame
     void Update()
     {
-        currentState.Execute();
-        LookAtTarget();
+        if (!IsDead)
+        {
+            currentState.Execute();
+            LookAtTarget();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+     
     }
 
     public void ChangeState(IEnemyState newState)
@@ -51,9 +62,13 @@ public class Earth_Enemy : Character_Lv1
 
     public void Move()
     {
-        myAnimator.SetFloat("Speed", 1);
+        if (!Attack)
+        {
+            myAnimator.SetFloat("Speed", 1);
 
-        transform.Translate(GetDirection() * (movespeed * Time.deltaTime));
+            transform.Translate(GetDirection() * (movespeed * Time.deltaTime));
+        }
+
     }
 
     public Vector2 GetDirection()
@@ -61,8 +76,31 @@ public class Earth_Enemy : Character_Lv1
         return faceright ? Vector2.right : Vector2.left;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    public override void OnTriggerEnter2D(Collider2D other)
     {
+        base.OnTriggerEnter2D(other);
         currentState.OnTriggerEnter(other);
+    }
+
+    public override IEnumerator TakeDamage()
+    {
+        Health -= 10;
+
+        if (!IsDead)
+        {
+
+        }
+        else
+        {
+            yield return null;
+        }
+    }
+
+    public override bool IsDead
+    {
+        get
+        {
+            return Health <= 0;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public abstract class Character_Lv1 : MonoBehaviour
 {
@@ -6,6 +7,11 @@ public abstract class Character_Lv1 : MonoBehaviour
 
     [SerializeField]
     protected Transform FirePos;
+
+    [SerializeField]
+    protected int Health;
+
+    public abstract bool IsDead { get; }
 
     [SerializeField]
     protected float movespeed;
@@ -52,4 +58,13 @@ public abstract class Character_Lv1 : MonoBehaviour
         }
     }
 
+    public abstract IEnumerator TakeDamage();
+
+    public virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Fire")
+        {
+            StartCoroutine(TakeDamage());
+        }
+    }
 }

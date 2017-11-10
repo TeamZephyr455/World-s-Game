@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Hero
   - Edge
+  - Fire
   layers:
   - Default
   - TransparentFX

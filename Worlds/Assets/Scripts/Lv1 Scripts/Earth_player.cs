@@ -24,6 +24,14 @@ public class Earth_player : Character_Lv1
 
     private Vector2 startPos;
 
+    public override bool IsDead
+    {
+        get
+        {
+            return Health <= 0;
+        }
+    }
+
     // Use this for initialization
     public override void Start()
     {
@@ -67,12 +75,12 @@ public class Earth_player : Character_Lv1
 
     private void HandleInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             Jump = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             ShootFire(0);
         }
@@ -116,5 +124,24 @@ public class Earth_player : Character_Lv1
 
         base.ShootFire(value);
 
+    }
+
+ /*   private void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.tag == "Hero")
+        {
+
+        }
+   }*/
+
+    public override IEnumerator TakeDamage()
+    
+    {
+        Health -= 10;
+
+        if (IsDead)
+        {
+            yield return null;
+        }
     }
 }
