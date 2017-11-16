@@ -22,7 +22,10 @@ public class Checkpoint_Lv3 : MonoBehaviour {
     {
         if (collision.name == "Player")
         {
-            collision.gameObject.GetComponent<Player_Lv3>().NewCheckpoint(checkpoint);
+            if (!hasPlayerPassed)
+            {
+                collision.gameObject.GetComponent<Player_Lv3>().NewCheckpoint(checkpoint);
+            }
         }
     }
 }
