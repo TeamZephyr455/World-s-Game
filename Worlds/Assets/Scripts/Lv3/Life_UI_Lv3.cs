@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-public class HealthBar_Lv3 : MonoBehaviour {
+public class Life_UI_Lv3 : MonoBehaviour {
 
     public Image currentHealthBar;
     public Text ratioText;
