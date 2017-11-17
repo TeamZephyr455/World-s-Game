@@ -126,8 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64860c185c22c92478a9109ef1734aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
+  startingHealth: 60
   isPlayer: 0
+  invulnerabilityTime: 0
 --- !u!114 &114897551971557750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104d74fb603862643a741481d83229ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 5
   facingRight: 1
   damage: 20
   bumpForce: 0
