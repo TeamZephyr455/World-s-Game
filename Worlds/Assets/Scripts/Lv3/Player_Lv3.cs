@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Lv3 : MonoBehaviour {
 
@@ -264,9 +265,17 @@ public class Player_Lv3 : MonoBehaviour {
         ammoCount = weaponPrefab.GetComponent<Bullet_Lv3>().ammo;
     }
 
-    public void KnockBack()
+    public void KnockBack(Transform enemyTransform)
     {
         myRigidbody.velocity = Vector2.zero;
+        if (enemyTransform.position.x < transform.position.x)
+        {
+            myRigidbody.AddForce(Vector2.right * 1000);
+        }
+        else
+        {
+            myRigidbody.AddForce(Vector2.left * 1000);
+        }
     }
 
     public void NewCheckpoint(Transform checkpoint)
@@ -279,14 +288,14 @@ public class Player_Lv3 : MonoBehaviour {
         if (currentLifes > 0)
         {
             currentLifes -= 1;
-            GetComponent<HealthBar_Lv3>().UpdateLives(currentLifes);
+            GetComponent<Life_UI_Lv3>().UpdateLives(currentLifes);
             myRigidbody.velocity = Vector2.zero;
             myHealth.ResetHealth();
             transform.position = currentCheckpoint.position;
         }
         else
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene("Level3");
         }
     }
 }
