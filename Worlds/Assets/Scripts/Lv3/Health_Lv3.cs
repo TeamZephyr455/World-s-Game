@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health_Lv3 : MonoBehaviour {
 
     [SerializeField]
-    private int startingHealth;
+    public int startingHealth;
     [SerializeField]
     private bool isPlayer;
     [SerializeField]
@@ -20,6 +20,11 @@ public class Health_Lv3 : MonoBehaviour {
     {
         currentHealth = startingHealth;
         invincible = false;
+        if (isPlayer)
+        {
+            GetComponent<Life_UI_Lv3>().UpdateMaxHealth(startingHealth);
+            GetComponent<Life_UI_Lv3>().UpdateHealthBar(currentHealth);
+        }
 	}
 	
 	// Update is called once per frame
@@ -33,9 +38,12 @@ public class Health_Lv3 : MonoBehaviour {
         if (!invincible)
         {
             currentHealth -= damage;
+            if (isPlayer)
+                GetComponent<Life_UI_Lv3>().UpdateHealthBar(currentHealth);
             if (!IsDead() && isPlayer)
             {
                 invincible = true;
+                gameObject.layer = LayerMask.NameToLayer("Invulnerable");
                 Invoke("resetInvulnerablility", invulnerabilityTime);
 
             }
@@ -64,10 +72,15 @@ public class Health_Lv3 : MonoBehaviour {
     public void ResetHealth()
     {
         currentHealth = startingHealth;
+        GetComponent<Life_UI_Lv3>().UpdateHealthBar(currentHealth);
     }
 
     private void resetInvulnerablility()
     {
+        if (isPlayer)
+        {
+            gameObject.layer = LayerMask.NameToLayer("Player");
+        }
         invincible = false;
     }
 }
