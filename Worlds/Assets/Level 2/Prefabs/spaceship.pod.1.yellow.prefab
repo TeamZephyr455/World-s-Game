@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b44ff5d58a104a119b57f80e081426a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 5
   invulPeriod: 0
 --- !u!212 &212314557818098514
 SpriteRenderer:

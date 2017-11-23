@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5144d2740ce7b48a99dd623ac79c3c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 22
+  maxSpeed: 30
 --- !u!114 &114470308146304708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd75c5dd7dd5744ab95f1c384bf42b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 5
+  timer: 2
 --- !u!212 &212670701473322448
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b44ff5d58a104a119b57f80e081426a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  health: 8
   invulPeriod: 0
 --- !u!114 &114565545986565192
 MonoBehaviour:
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5144d2740ce7b48a99dd623ac79c3c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 0.3
+  maxSpeed: 0.5
 --- !u!114 &114822635074572960
 MonoBehaviour:
   m_ObjectHideFlags: 1

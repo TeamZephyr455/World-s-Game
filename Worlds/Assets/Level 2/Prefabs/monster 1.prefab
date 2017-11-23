@@ -297,8 +297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b44ff5d58a104a119b57f80e081426a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
-  invulPeriod: 1
+  health: 30
+  invulPeriod: 0
 --- !u!114 &114368155099924306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -325,7 +325,7 @@ MonoBehaviour:
   bulletOffset: {x: -2.5, y: 0, z: 0}
   bulletPrefab: {fileID: 1357083340558776, guid: 5d979d190df4c45b7acfcbf09bd9ee71,
     type: 2}
-  fireDelay: 9
+  fireDelay: 1
 --- !u!212 &212264661031920418
 SpriteRenderer:
   m_ObjectHideFlags: 1
