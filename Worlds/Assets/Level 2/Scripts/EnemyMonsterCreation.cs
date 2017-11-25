@@ -10,13 +10,13 @@ public class EnemyMonsterCreation : MonoBehaviour {
 	public GameObject enemyPrefab3;
 	public GameObject enemyPrefab4;
 	public GameObject enemyPrefab5;
-	public GameObject monsterPrefab;
+//	public GameObject monsterPrefab;
 
 	// Use this for initialization
 	void Start () {
 
 		Vector3 enemyPos1 = transform.position;
-		enemyPos1.x = 27;
+		enemyPos1.x = 30;
 		enemyPos1.y = 9;
 		enemyPos1.z = 0;
 		transform.position = enemyPos1;
@@ -28,19 +28,19 @@ public class EnemyMonsterCreation : MonoBehaviour {
 		transform.position = enemyPos2;
 
 		Vector3 enemyPos3 = transform.position;
-		enemyPos3.x = 25;
+		enemyPos3.x = 34;
 		enemyPos3.y = 2;
 		enemyPos3.z = 0;
 		transform.position = enemyPos3;
 
-		Vector3 monsterPos = transform.position;
-		monsterPos.x = 33;
-		monsterPos.y = -1;
-		monsterPos.z = 0;
-		transform.position = monsterPos;
+//		Vector3 monsterPos = transform.position;
+//		monsterPos.x = 22;
+//		monsterPos.y = -1;
+//		monsterPos.z = 0;
+//		transform.position = monsterPos;
 
 		Vector3 enemyPos4 = transform.position;
-		enemyPos4.x = 23;
+		enemyPos4.x = 25;
 		enemyPos4.y = -6;
 		enemyPos4.z = 0;
 		transform.position = enemyPos4;
@@ -50,6 +50,12 @@ public class EnemyMonsterCreation : MonoBehaviour {
 		enemyPos5.y = -10;
 		enemyPos5.z = 0;
 		transform.position = enemyPos5;
+
+		Vector3 enemyPos6 = transform.position;
+		enemyPos6.x = 33;
+		enemyPos6.y = -4;
+		enemyPos6.z = 0;
+		transform.position = enemyPos6;
 
 		Vector3 playerPos = transform.position;
 		playerPos.x = -18;
@@ -63,7 +69,8 @@ public class EnemyMonsterCreation : MonoBehaviour {
 		Instantiate (enemyPrefab3, enemyPos3, transform.rotation);
 		Instantiate (enemyPrefab4, enemyPos4, transform.rotation);
 		Instantiate (enemyPrefab5, enemyPos5, transform.rotation);
-		Instantiate (monsterPrefab, monsterPos, transform.rotation);
+		Instantiate (enemyPrefab1, enemyPos6, transform.rotation);
+//		Instantiate (monsterPrefab, monsterPos, transform.rotation);
 
 	}
 	

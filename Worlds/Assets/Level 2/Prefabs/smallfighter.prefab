@@ -23,10 +23,10 @@ GameObject:
   - component: {fileID: 60607635193814600}
   - component: {fileID: 50741929132447168}
   - component: {fileID: 114658390008120644}
-  - component: {fileID: 114028275175432280}
   - component: {fileID: 114005020477518328}
   - component: {fileID: 114077617972768268}
-  m_Layer: 0
+  - component: {fileID: 114800267839766734}
+  m_Layer: 8
   m_Name: smallfighter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,19 +122,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1732054968322780, guid: 6c560171459094904adf79bd96a81f14,
     type: 2}
   fireDelay: 0.25
---- !u!114 &114028275175432280
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1482275654141626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b44ff5d58a104a119b57f80e081426a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 20
-  invulPeriod: 0.5
 --- !u!114 &114077617972768268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -156,7 +143,7 @@ MonoBehaviour:
     type: 2}
   enemyPrefab5: {fileID: 1014797677940690, guid: 9ae854a3a0e324a898ac3b3866977e0c,
     type: 2}
-  monsterPrefab: {fileID: 1158852155642386, guid: 2badfd2eb0a514965928e9eef4e64ebe,
+  monsterPrefab: {fileID: 1401855499056158, guid: 92ec7f5eddec242639e141baa19f937d,
     type: 2}
 --- !u!114 &114658390008120644
 MonoBehaviour:
@@ -172,6 +159,22 @@ MonoBehaviour:
   maxSpeed: 10
   rotSpeed: 0
   shipRadius: 0.5
+--- !u!114 &114800267839766734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1482275654141626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14978e246af534e428c30d69e77af9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthStat:
+    bar: {fileID: 0}
+    maxVal: 100
+    currentVal: 100
+  invulPeriod: 0
 --- !u!212 &212715011216438894
 SpriteRenderer:
   m_ObjectHideFlags: 1
