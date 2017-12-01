@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104d74fb603862643a741481d83229ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.75
+  speed: 1.25
   facingRight: 1
   damage: 20
   bumpForce: 0

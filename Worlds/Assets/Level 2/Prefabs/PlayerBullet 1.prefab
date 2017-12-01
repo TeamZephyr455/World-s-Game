@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd75c5dd7dd5744ab95f1c384bf42b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 15
+  timer: 1.5
 --- !u!114 &114766366137564148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ada251967014d4ffc8b90c5bf437e6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 15
+  maxSpeed: 35
 --- !u!114 &114988592739642860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  invulPeriod: 1
+  invulPeriod: 0
 --- !u!212 &212932901054406252
 SpriteRenderer:
   m_ObjectHideFlags: 1

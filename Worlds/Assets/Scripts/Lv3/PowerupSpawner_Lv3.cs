@@ -11,6 +11,9 @@ public class PowerupSpawner_Lv3 : MonoBehaviour {
     private bool spawnOnStart;
 
     [SerializeField]
+    private int delayForSpawn;
+
+    [SerializeField]
     private int numberToSpawn;
 
     [SerializeField]
@@ -22,8 +25,8 @@ public class PowerupSpawner_Lv3 : MonoBehaviour {
     void Start()
     {
         if (spawnOnStart)
-            SpawnEnemy();
-        spawnCountdown = timeBetweenSpawn;
+            SpawnPowerup();
+        spawnCountdown = timeBetweenSpawn + delayForSpawn;
     }
 
     // Update is called once per frame
@@ -31,13 +34,13 @@ public class PowerupSpawner_Lv3 : MonoBehaviour {
     {
         if (spawnCountdown <= 0)
         {
-            SpawnEnemy();
+            SpawnPowerup();
             spawnCountdown = timeBetweenSpawn;
         }
         else spawnCountdown -= Time.deltaTime;
     }
 
-    void SpawnEnemy()
+    void SpawnPowerup()
     {
         if (numberToSpawn == 0)
         {

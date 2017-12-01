@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageHandler : MonoBehaviour {
-
-	public int health = 1;
-	public float invulPeriod = 0;
+	
+	public int health;
+	public float invulPeriod = 0.5f;
 	float invulnTimer = 0;
 	int correctLayer;
 
 	void Start() {
 		correctLayer = gameObject.layer;
 	}
+		
 
 	void OnTriggerEnter2D() {
 		Debug.Log ("Trigger");

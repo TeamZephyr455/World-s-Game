@@ -45,7 +45,7 @@ public class Slime_Lv3 : MonoBehaviour {
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);
-                collision.GetComponent<Player_Lv3>().KnockBack();
+                collision.GetComponent<Player_Lv3>().KnockBack(transform);
                 collision.GetComponent<Rigidbody2D>().AddForce(Vector2.left);
             }
         }
