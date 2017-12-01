@@ -8325,7 +8325,7 @@ MonoBehaviour:
     type: 2}
   bombPrefab: {fileID: 1071482029776686, guid: b159118b94015cc44a61eee61ef7e897, type: 2}
   bombCount: 0
-  lifes: 2
+  lifes: 3
 --- !u!114 &961360354
 MonoBehaviour:
   m_ObjectHideFlags: 0
