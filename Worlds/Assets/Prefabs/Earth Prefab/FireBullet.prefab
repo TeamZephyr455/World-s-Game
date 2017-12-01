@@ -21,11 +21,11 @@ GameObject:
   - component: {fileID: 4569904253198088}
   - component: {fileID: 212125116440969192}
   - component: {fileID: 50635322245433274}
-  - component: {fileID: 114786266403646850}
-  - component: {fileID: 61635392211426652}
+  - component: {fileID: 61119519290365592}
+  - component: {fileID: 114902008955224884}
   m_Layer: 0
   m_Name: FireBullet
-  m_TagString: Fire
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61635392211426652
+--- !u!61 &61119519290365592
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -88,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.24, y: 0.04}
   m_EdgeRadius: 0
---- !u!114 &114786266403646850
+--- !u!114 &114902008955224884
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,10 +96,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1372100876795364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99050e39902c9f3428a1a62ee2fef083, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ca138e6c921d414197fa40df69897ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  fireRate: 0
+  damage: 50
+  timeToFire: 0
+  ammo: 0
 --- !u!212 &212125116440969192
 SpriteRenderer:
   m_ObjectHideFlags: 1
