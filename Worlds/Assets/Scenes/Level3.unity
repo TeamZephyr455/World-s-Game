@@ -8332,10 +8332,14 @@ MonoBehaviour:
   bombCount: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   lifes: 2
 =======
   lifes: 3
 >>>>>>> master
+=======
+  lifes: 3
+>>>>>>> origin/final-merge
 =======
   lifes: 3
 >>>>>>> origin/final-merge
@@ -8354,13 +8358,14 @@ MonoBehaviour:
   isPlayer: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  isFinalBoss: 0
+>>>>>>> origin/final-merge
 =======
   isFinalBoss: 0
 >>>>>>> origin/final-merge
   invulnerabilityTime: 3
-=======
-  invulnerabilityTime: 2
->>>>>>> master
 --- !u!114 &961360355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8369,11 +8374,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 961360347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 396542bf5f9691a43b9f839459086367, type: 3}
-=======
-  m_Script: {fileID: 11500000, guid: 62d43a5963f8c0d449c2f097a118b90b, type: 3}
->>>>>>> master
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealthBar: {fileID: 502157238}
