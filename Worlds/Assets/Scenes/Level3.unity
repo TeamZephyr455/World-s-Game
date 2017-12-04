@@ -1633,6 +1633,11 @@ Prefab:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.71
       objectReference: {fileID: 0}
+    - target: {fileID: 114696248949956956, guid: 9457f7d9ef3a93549b6c40707280a5b4,
+        type: 2}
+      propertyPath: isFinalBoss
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9457f7d9ef3a93549b6c40707280a5b4, type: 2}
   m_IsPrefabParent: 0
@@ -8339,6 +8344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   isPlayer: 1
+  isFinalBoss: 0
   invulnerabilityTime: 3
 --- !u!114 &961360355
 MonoBehaviour:
