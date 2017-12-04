@@ -33,14 +33,12 @@ public class Player_Lv1 : MonoBehaviour {
     private GameObject weaponPrefab;
     [SerializeField]
     private GameObject defaultWeapon;
-    [SerializeField]
-    private GameObject bombPrefab;
+    
 
     //Weapon Attributes
     private float fireRate;
     private float timeToFire;
     private int ammoCount;
-    public int bombCount;
 
     public int lifes;
     private int currentLifes;
@@ -56,7 +54,6 @@ public class Player_Lv1 : MonoBehaviour {
         myAnimator = GetComponent<Animator>();
         myHealth = GetComponent<Health_Lv1>();
         swapWeapon(defaultWeapon); //starting weapon
-        bombCount = bombPrefab.GetComponent<Bomb_Lv1>().ammo;
         currentLifes = lifes;
 
     }
@@ -119,10 +116,7 @@ public class Player_Lv1 : MonoBehaviour {
             }
         }
 
-        if (Input.GetButtonDown("Fire2") && bombCount > 0)
-        {
-            throwBomb();
-        }
+       
 
     }
 
@@ -231,24 +225,6 @@ public class Player_Lv1 : MonoBehaviour {
             }
         }
 
-    }
-
-    public void throwBomb()
-    {
-         if (facingRight)
-        {
-            GameObject tmp = Instantiate(bombPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 45)));
-            tmp.GetComponent<Bomb_Lv1>().Initialize(Vector2.right);
-        }
-
-        //facing left
-        else
-        {
-            GameObject tmp = Instantiate(bombPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 45)));
-            tmp.GetComponent<Bomb_Lv1>().Initialize(Vector2.left);
-        }
-
-        bombCount -= 1;
     }
 
     public void swapWeapon(GameObject weapon)

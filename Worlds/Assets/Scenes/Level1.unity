@@ -29441,8 +29441,6 @@ MonoBehaviour:
   jumpForce: 400
   defaultWeapon: {fileID: 1372100876795364, guid: a9110a1aeaf46d84ca8b89c14c4f1d51,
     type: 2}
-  bombPrefab: {fileID: 1071482029776686, guid: b159118b94015cc44a61eee61ef7e897, type: 2}
-  bombCount: 0
   lifes: 3
 --- !u!1 &907579308
 GameObject:
@@ -41968,6 +41966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1278209702}
   - component: {fileID: 1278209701}
+  - component: {fileID: 1278209703}
   m_Layer: 0
   m_Name: End_Of_Level
   m_TagString: Untagged
@@ -42007,12 +42006,23 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1278209700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47.35, y: -27.86, z: -1.0687431}
+  m_LocalPosition: {x: 46.71, y: -27.84, z: -1.0687431}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1278209703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1278209700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6288ecbd1dc78db47b9db6ffdc6e23c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1279771759
 GameObject:
   m_ObjectHideFlags: 0
