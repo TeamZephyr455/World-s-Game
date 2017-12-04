@@ -1633,6 +1633,11 @@ Prefab:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.71
       objectReference: {fileID: 0}
+    - target: {fileID: 114696248949956956, guid: 9457f7d9ef3a93549b6c40707280a5b4,
+        type: 2}
+      propertyPath: isFinalBoss
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9457f7d9ef3a93549b6c40707280a5b4, type: 2}
   m_IsPrefabParent: 0
@@ -8326,10 +8331,14 @@ MonoBehaviour:
   bombPrefab: {fileID: 1071482029776686, guid: b159118b94015cc44a61eee61ef7e897, type: 2}
   bombCount: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   lifes: 2
 =======
   lifes: 3
 >>>>>>> master
+=======
+  lifes: 3
+>>>>>>> origin/final-merge
 --- !u!114 &961360354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8344,6 +8353,10 @@ MonoBehaviour:
   startingHealth: 100
   isPlayer: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  isFinalBoss: 0
+>>>>>>> origin/final-merge
   invulnerabilityTime: 3
 =======
   invulnerabilityTime: 2

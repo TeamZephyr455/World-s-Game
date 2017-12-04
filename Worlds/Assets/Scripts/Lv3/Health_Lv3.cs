@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health_Lv3 : MonoBehaviour {
 
@@ -8,6 +9,8 @@ public class Health_Lv3 : MonoBehaviour {
     public int startingHealth;
     [SerializeField]
     private bool isPlayer;
+    [SerializeField]
+    private bool isFinalBoss;
     [SerializeField]
     private float invulnerabilityTime;
 
@@ -58,6 +61,10 @@ public class Health_Lv3 : MonoBehaviour {
             if (isPlayer)
             {
                 gameObject.GetComponent<Player_Lv3>().Death();
+            }
+            else if (isFinalBoss)
+            {
+                SceneManager.LoadScene("Credits");
             }
             else
             {
