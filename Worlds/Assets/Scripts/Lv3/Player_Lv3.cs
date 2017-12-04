@@ -295,7 +295,7 @@ public class Player_Lv3 : MonoBehaviour {
         }
         else
         {
-            SceneManager.LoadScene("Level3");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalPower: 300
   verticalPower: 250
-  ammo: 5
+  ammo: 0
   fuseTime: 5
   whatToColliideWith:
     serializedVersion: 2
