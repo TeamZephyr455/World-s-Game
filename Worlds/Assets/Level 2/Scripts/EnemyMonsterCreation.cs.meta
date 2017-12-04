@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 4dd1acc0f3fbb4259921d3540ca781db
+timeCreated: 1511245674
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - enemyPrefab1: {fileID: 1303918008531136, guid: fcc7cb3afa8244189b3ae25516a467e3,
+      type: 2}
+  - enemyPrefab2: {instanceID: 0}
+  - enemyPrefab3: {instanceID: 0}
+  - enemyPrefab4: {instanceID: 0}
+  - enemyPrefab5: {instanceID: 0}
+  - monsterPrefab: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

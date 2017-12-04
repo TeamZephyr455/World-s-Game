@@ -21,8 +21,7 @@ GameObject:
   - component: {fileID: 4569904253198088}
   - component: {fileID: 212125116440969192}
   - component: {fileID: 50635322245433274}
-  - component: {fileID: 61119519290365592}
-  - component: {fileID: 114902008955224884}
+  - component: {fileID: 114786266403646850}
   m_Layer: 0
   m_Name: FireBullet
   m_TagString: Untagged
@@ -63,32 +62,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61119519290365592
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1372100876795364}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.24, y: 0.04}
-    newSize: {x: 0.24, y: 0.04}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.24, y: 0.04}
-  m_EdgeRadius: 0
---- !u!114 &114902008955224884
+--- !u!114 &114786266403646850
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,14 +70,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1372100876795364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ca138e6c921d414197fa40df69897ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 99050e39902c9f3428a1a62ee2fef083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  fireRate: 0
-  damage: 50
-  timeToFire: 0
-  ammo: 0
 --- !u!212 &212125116440969192
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -113,7 +83,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -129,7 +98,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
