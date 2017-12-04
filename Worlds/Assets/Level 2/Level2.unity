@@ -205,7 +205,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 259913433}
-  - component: {fileID: 259913432}
   - component: {fileID: 259913434}
   m_Layer: 8
   m_Name: PlayerSpawnSpot
@@ -214,20 +213,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &259913432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 259913431}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24c2c1ec3b3ef4876ab70d2a44ab6166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 1070323719311756, guid: c6afdf3e82e9a46358a42cdd4b6065cc,
-    type: 2}
-  numLives: 4
 --- !u!4 &259913433
 Transform:
   m_ObjectHideFlags: 0
@@ -274,7 +259,6 @@ GameObject:
   - component: {fileID: 336265515}
   - component: {fileID: 336265514}
   - component: {fileID: 336265518}
-  - component: {fileID: 336265519}
   m_Layer: 0
   m_Name: Background1
   m_TagString: Untagged
@@ -357,17 +341,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83770c7ef9d224209a36f87bf7f861bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &336265519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 336265513}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 578b00e7cef9441689537b6961572cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &533716080
@@ -566,7 +539,7 @@ Prefab:
     - target: {fileID: 114311492386106782, guid: c6afdf3e82e9a46358a42cdd4b6065cc,
         type: 2}
       propertyPath: healthStat.currentVal
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 114311492386106782, guid: c6afdf3e82e9a46358a42cdd4b6065cc,
         type: 2}

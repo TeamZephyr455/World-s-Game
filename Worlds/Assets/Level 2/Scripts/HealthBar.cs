@@ -51,7 +51,7 @@ public class HealthBar : MonoBehaviour {
 		//Destroy(gameObject);
 		if (numLives > 0) {
 			transform.position = pos;
-			healthStat.CurrentVal = 10;
+			healthStat.CurrentVal = 100;
 		}
 		// else {
 		// 	Destroy(gameObject);
