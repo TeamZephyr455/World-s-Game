@@ -5,15 +5,10 @@ using System;
 
 [Serializable]
 public class Stat {
-	
 	[SerializeField]
 	private BarScript bar;
-
-	[SerializeField]
-	private float maxVal;
-
-	[SerializeField]
-	private float currentVal;
+	public float maxVal;
+	public float currentVal;
 
 	public float CurrentVal {
 		get {
