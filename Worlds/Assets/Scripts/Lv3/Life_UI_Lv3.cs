@@ -2,9 +2,8 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-
-public class Life_UI_Lv3 : MonoBehaviour {
-
+public class Life_UI_Lv3 : MonoBehaviour
+{
 
     public Image currentHealthBar;
     public Text ratioText;
@@ -22,9 +21,7 @@ public class Life_UI_Lv3 : MonoBehaviour {
 
     public void UpdateHealthBar(int currentHealth)
     {
-
         float ratio = (float)currentHealth / maxHitpoint;
-
         currentHealthBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
         ratioText.text = (ratio * 100).ToString() + '%';
     }
@@ -32,7 +29,6 @@ public class Life_UI_Lv3 : MonoBehaviour {
     public void UpdateMaxHealth(int maxHealth)
     {
         maxHitpoint = maxHealth;
-
     }
 
     public void UpdateLives(int lives)
