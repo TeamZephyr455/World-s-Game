@@ -9,7 +9,7 @@ public class EndOfLevel1 : MonoBehaviour {
     {
         if(collision.name == "Player")
         {
-         	SceneManager.LoadScene("Level2");
+			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
