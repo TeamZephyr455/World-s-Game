@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 4dd1acc0f3fbb4259921d3540ca781db
+timeCreated: 1512528236
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - enemyPrefab1: {fileID: 1303918008531136, guid: fcc7cb3afa8244189b3ae25516a467e3,
+      type: 2}
+  - enemyPrefab2: {fileID: 1843329235942518, guid: 659621f17446140699b1fb3b99e6ce5a,
+      type: 2}
+  - enemyPrefab3: {fileID: 1098792884794548, guid: e1b1a0fbf97494081993e9e5f0abbed5,
+      type: 2}
+  - enemyPrefab4: {fileID: 1190716058444804, guid: a30aa3dd055884104ad6c974fe152df0,
+      type: 2}
+  - enemyPrefab5: {fileID: 1014797677940690, guid: 9ae854a3a0e324a898ac3b3866977e0c,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

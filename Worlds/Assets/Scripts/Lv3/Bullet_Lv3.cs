@@ -42,7 +42,7 @@ public class Bullet_Lv3 : MonoBehaviour {
 
     private void OnBecameInvisible()
     {
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
